@@ -59,9 +59,9 @@ class _TopicScreenState extends State<TopicScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      // appBar: AppBar(
+      //   title: Text(widget.title),
+      // ),
       drawer: CustomDrawer(parentContext: context),
       body: _topics.isEmpty
           ? const Center(child: CircularProgressIndicator())
