@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
 
             debugShowCheckedModeBanner: false,
-            
+
             //By default theme setting, you can also set system
             // when your mobile theme is dark the app also become dark
             themeMode: notifier.isDark ? ThemeMode.dark : ThemeMode.light,
@@ -40,10 +40,9 @@ class MyApp extends StatelessWidget {
             //Our custom theme applied
             darkTheme: notifier.isDark ? notifier.darkTheme : notifier.lightTheme,
 
-            theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-              useMaterial3: true,
-            ),
+            theme: notifier.isDark
+                ? notifier.darkTheme // dark theme applied
+                : notifier.redTheme, // pink theme applied when not dark
 
             home: HomeScreen(title: 'Home'),
 
